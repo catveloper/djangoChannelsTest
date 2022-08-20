@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Chat Rooms</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+What chat room would you like to enter?<br/>
+<input id="room-name-input" type="text" size="100"/><br/>
+<input id="room-name-submit" type="button" value="Enter"/>
+
+<script>
+    $(function () {
+        $('#room-name-input').keyup(function (e) {
+            if (e.keyCode === 13) {  // enter, return
+                $('#room-name-submit').click();
+            }
+        });
+        $('#room-name-submit').click(function (e) {
+            var roomName = document.querySelector('#room-name-input').value;
+            window.location.pathname = '/chat/' + roomName ;
+        });
+    })
+
+</script>
+</body>
+</html>
